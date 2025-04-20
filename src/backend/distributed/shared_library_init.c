@@ -579,6 +579,8 @@ _PG_init(void)
 		register_label_provider("citus '!tests_label_provider",
 								citus_test_object_relabel);
 	}
+
+	IsLoadedCitus = true;
 }
 
 

@@ -1732,7 +1732,7 @@ ExplainAnalyzeDestTupleDescForQuery(TupleDestination *self, int queryNumber)
 bool
 RequestedForExplainAnalyze(CitusScanState *node)
 {
-	return (node->customScanState.ss.ps.state->es_instrument != 0);
+	return ((node->customScanState.ss.ps.state->es_instrument & (~(INSTRUMENT_RDSPG_DBW))) != 0);
 }
 
 
